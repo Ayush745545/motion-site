@@ -1,0 +1,528 @@
+{
+  "$defs": {
+    "Asset": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "maxLength": 2048,
+          "title": "Url",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "logo_candidate",
+            "hero_illustration",
+            "visible_image"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "width": {
+          "maximum": 100000,
+          "minimum": 0,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "maximum": 100000,
+          "minimum": 0,
+          "title": "Height",
+          "type": "integer"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "url",
+        "kind",
+        "width",
+        "height",
+        "confidence"
+      ],
+      "title": "Asset",
+      "type": "object"
+    },
+    "Color": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "title": "Value",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "background",
+            "text",
+            "primary",
+            "accent"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "count": {
+          "maximum": 20000,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "frequency": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Frequency",
+          "type": "number"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "role",
+        "count",
+        "frequency",
+        "confidence"
+      ],
+      "title": "Color",
+      "type": "object"
+    },
+    "Font": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "maxLength": 240,
+          "title": "Family",
+          "type": "string"
+        },
+        "size": {
+          "maxLength": 240,
+          "title": "Size",
+          "type": "string"
+        },
+        "weight": {
+          "maxLength": 240,
+          "title": "Weight",
+          "type": "string"
+        },
+        "count": {
+          "maximum": 5000,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "available": {
+          "title": "Available",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "family",
+        "size",
+        "weight",
+        "count",
+        "available"
+      ],
+      "title": "Font",
+      "type": "object"
+    },
+    "Heading": {
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "maximum": 6,
+          "minimum": 1,
+          "title": "Level",
+          "type": "integer"
+        },
+        "count": {
+          "maximum": 5000,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "sizes": {
+          "items": {
+            "maxLength": 240,
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Sizes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "level",
+        "count",
+        "sizes"
+      ],
+      "title": "Heading",
+      "type": "object"
+    },
+    "Layout": {
+      "additionalProperties": false,
+      "properties": {
+        "features": {
+          "items": {
+            "$ref": "#/$defs/Region"
+          },
+          "maxItems": 6,
+          "title": "Features",
+          "type": "array"
+        },
+        "visual_density": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Visual Density",
+          "type": "number"
+        },
+        "sampled_elements": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Sampled Elements",
+          "type": "integer"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "features",
+        "visual_density",
+        "sampled_elements",
+        "confidence"
+      ],
+      "title": "Layout",
+      "type": "object"
+    },
+    "Motion": {
+      "additionalProperties": false,
+      "properties": {
+        "transition": {
+          "maxLength": 240,
+          "title": "Transition",
+          "type": "string"
+        },
+        "transition_duration": {
+          "maxLength": 240,
+          "title": "Transition Duration",
+          "type": "string"
+        },
+        "animation": {
+          "maxLength": 240,
+          "title": "Animation",
+          "type": "string"
+        },
+        "animation_duration": {
+          "maxLength": 240,
+          "title": "Animation Duration",
+          "type": "string"
+        },
+        "timing": {
+          "maxLength": 240,
+          "title": "Timing",
+          "type": "string"
+        },
+        "transform": {
+          "maxLength": 240,
+          "title": "Transform",
+          "type": "string"
+        },
+        "count": {
+          "maximum": 5000,
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "transition",
+        "transition_duration",
+        "animation",
+        "animation_duration",
+        "timing",
+        "transform",
+        "count"
+      ],
+      "title": "Motion",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "hero",
+            "navigation",
+            "card",
+            "grid",
+            "section",
+            "button"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "count": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Count",
+          "type": "integer"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "count",
+        "confidence"
+      ],
+      "title": "Region",
+      "type": "object"
+    },
+    "Snapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "viewport",
+            "hero"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "path": {
+          "pattern": "^/api/dna/results/[0-9a-f-]{36}/screenshots/(viewport|hero)$",
+          "title": "Path",
+          "type": "string"
+        },
+        "width": {
+          "maximum": 1440,
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "maximum": 1200,
+          "minimum": 1,
+          "title": "Height",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "kind",
+        "path",
+        "width",
+        "height"
+      ],
+      "title": "Snapshot",
+      "type": "object"
+    },
+    "Typography": {
+      "additionalProperties": false,
+      "properties": {
+        "fonts": {
+          "items": {
+            "$ref": "#/$defs/Font"
+          },
+          "maxItems": 60,
+          "title": "Fonts",
+          "type": "array"
+        },
+        "headings": {
+          "items": {
+            "$ref": "#/$defs/Heading"
+          },
+          "maxItems": 6,
+          "title": "Headings",
+          "type": "array"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        }
+      },
+      "required": [
+        "fonts",
+        "headings",
+        "confidence"
+      ],
+      "title": "Typography",
+      "type": "object"
+    },
+    "WebsiteContent": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "maxLength": 160,
+          "title": "Title",
+          "type": "string"
+        },
+        "headings": {
+          "items": {
+            "maxLength": 240,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Headings",
+          "type": "array"
+        },
+        "paragraphs": {
+          "items": {
+            "maxLength": 240,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Paragraphs",
+          "type": "array"
+        },
+        "ctas": {
+          "items": {
+            "maxLength": 240,
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Ctas",
+          "type": "array"
+        }
+      },
+      "required": [
+        "title",
+        "headings",
+        "paragraphs",
+        "ctas"
+      ],
+      "title": "WebsiteContent",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "content": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/WebsiteContent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "analysis_id": {
+      "format": "uuid",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "source_url": {
+      "maxLength": 2048,
+      "title": "Source Url",
+      "type": "string"
+    },
+    "final_url": {
+      "maxLength": 2048,
+      "title": "Final Url",
+      "type": "string"
+    },
+    "captured_at": {
+      "format": "date-time",
+      "title": "Captured At",
+      "type": "string"
+    },
+    "palette": {
+      "items": {
+        "$ref": "#/$defs/Color"
+      },
+      "maxItems": 48,
+      "title": "Palette",
+      "type": "array"
+    },
+    "typography": {
+      "$ref": "#/$defs/Typography"
+    },
+    "layout": {
+      "$ref": "#/$defs/Layout"
+    },
+    "motion": {
+      "items": {
+        "$ref": "#/$defs/Motion"
+      },
+      "maxItems": 60,
+      "title": "Motion",
+      "type": "array"
+    },
+    "motion_scope": {
+      "const": "computed-css-only",
+      "default": "computed-css-only",
+      "title": "Motion Scope",
+      "type": "string"
+    },
+    "assets": {
+      "items": {
+        "$ref": "#/$defs/Asset"
+      },
+      "maxItems": 60,
+      "title": "Assets",
+      "type": "array"
+    },
+    "screenshots": {
+      "items": {
+        "$ref": "#/$defs/Snapshot"
+      },
+      "maxItems": 2,
+      "title": "Screenshots",
+      "type": "array"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "warnings": {
+      "items": {
+        "maxLength": 240,
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "analysis_id",
+    "source_url",
+    "final_url",
+    "captured_at",
+    "palette",
+    "typography",
+    "layout",
+    "motion",
+    "assets",
+    "screenshots",
+    "confidence",
+    "warnings"
+  ],
+  "title": "DNAResult",
+  "type": "object"
+}

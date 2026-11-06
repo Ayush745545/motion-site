@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0",
+  "source_type": "local_directory",
+  "source_name": "Atlas Product Studio",
+  "analyzed_at": "2026-11-03T03:10:04.864735+00:00",
+  "technology_fingerprint": [
+    {
+      "name": "Next.js",
+      "version": "^15.1.0",
+      "evidence": "package.json",
+      "confidence": 0.96
+    },
+    {
+      "name": "React",
+      "version": "^19.0.0",
+      "evidence": "package.json",
+      "confidence": 0.96
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "gsap",
+      "version": "^3.12.5",
+      "group": "runtime"
+    },
+    {
+      "name": "next",
+      "version": "^15.1.0",
+      "group": "runtime"
+    },
+    {
+      "name": "react",
+      "version": "^19.0.0",
+      "group": "runtime"
+    },
+    {
+      "name": "react-dom",
+      "version": "^19.0.0",
+      "group": "runtime"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "^3.4.17",
+      "group": "development"
+    },
+    {
+      "name": "typescript",
+      "version": "^5.7.0",
+      "group": "development"
+    }
+  ],
+  "styling_systems": [
+    {
+      "name": "Tailwind CSS",
+      "version": "^3.4.17",
+      "evidence": "package.json",
+      "confidence": 0.96
+    }
+  ],
+  "theme_tokens": [
+    {
+      "name": "--brand-ink",
+      "value": "#171a21",
+      "kind": "color",
+      "evidence": "app/globals.css"
+    },
+    {
+      "name": "--brand-accent",
+      "value": "#5267eb",
+      "kind": "color",
+      "evidence": "app/globals.css"
+    },
+    {
+      "name": "--space-panel",
+      "value": "1.5rem",
+      "kind": "spacing",
+      "evidence": "app/globals.css"
+    },
+    {
+      "name": "--radius-card",
+      "value": "12px",
+      "kind": "radius",
+      "evidence": "app/globals.css"
+    },
+    {
+      "name": "--font-display",
+      "value": "Atlas Serif",
+      "kind": "font",
+      "evidence": "app/globals.css"
+    }
+  ],
+  "ui_components": [
+    {
+      "path": "components/FeatureGrid.tsx",
+      "exports": [
+        "FeatureGrid"
+      ]
+    },
+    {
+      "path": "components/Hero.tsx",
+      "exports": [
+        "Hero"
+      ]
+    }
+  ],
+  "animation_libraries": [
+    {
+      "name": "GSAP",
+      "version": "^3.12.5",
+      "evidence": "package.json",
+      "confidence": 0.96
+    },
+    {
+      "name": "CSS transitions",
+      "version": "",
+      "evidence": "app/globals.css",
+      "confidence": 0.8
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "kind": "page",
+      "evidence": "app/page.tsx"
+    },
+    {
+      "path": "/api/status",
+      "kind": "api",
+      "evidence": "app/api/status/route.ts"
+    },
+    {
+      "path": "/studio",
+      "kind": "page",
+      "evidence": "app/studio/page.tsx"
+    }
+  ],
+  "readme_summary": "Atlas Product Studio \u00b7 Atlas Product Studio helps teams plan launch campaigns in one shared workspace. It brings campaign notes and launch milestones together for review.",
+  "product_summary": "A product workspace for teams to plan launch campaigns.",
+  "summary_evidence": [
+    {
+      "path": "README.md",
+      "claim": "Atlas Product Studio \u00b7 Atlas Product Studio helps teams plan launch campaigns in one shared workspace. It brings campaign notes and launch milestones together for review.",
+      "confidence": 0.82
+    },
+    {
+      "path": "package.json",
+      "claim": "A product workspace for teams to plan launch campaigns.",
+      "confidence": 0.9
+    }
+  ],
+  "product_category": "saas",
+  "category_confidence": 0.55,
+  "motion_opportunities": [
+    {
+      "suggestion": "Use the detected GSAP system for restrained interface reveals.",
+      "evidence": [
+        "package.json"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "suggestion": "Reveal the observed UI component groups in sequence, preserving their existing names and hierarchy.",
+      "evidence": [
+        "components/FeatureGrid.tsx",
+        "components/Hero.tsx"
+      ],
+      "confidence": 0.78
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/brand-logo.svg",
+      "kind": "logo_candidate",
+      "available_for_render": false,
+      "reason": "Source assets are path references only; the archive is not retained or rendered."
+    }
+  ],
+  "storyboard": {
+    "creative_concept": "A source-grounded introduction to Atlas Product Studio; every claim is tied to inspected metadata or file paths.",
+    "opening_hook": "Atlas Product Studio",
+    "scenes": [
+      {
+        "id": "intro",
+        "headline": "Atlas Product Studio",
+        "description": "Introduce the repository using its verified project identity.",
+        "motion_preset": "fade",
+        "evidence": [
+          "README.md",
+          "package.json",
+          "components/FeatureGrid.tsx",
+          "components/Hero.tsx"
+        ],
+        "visual_assets": [],
+        "visual_assets_available": false
+      },
+      {
+        "id": "reveal",
+        "headline": "Built with Next.js",
+        "description": "Reveal the detected framework and styling fingerprint.",
+        "motion_preset": "parallax",
+        "evidence": [
+          "package.json",
+          "package.json",
+          "package.json"
+        ],
+        "visual_assets": [
+          "public/brand-logo.svg"
+        ],
+        "visual_assets_available": false
+      },
+      {
+        "id": "features",
+        "headline": "UI: FeatureGrid, Hero",
+        "description": "Show only component names, routes, and design tokens found in source files.",
+        "motion_preset": "slide",
+        "evidence": [
+          "components/FeatureGrid.tsx",
+          "components/Hero.tsx"
+        ],
+        "visual_assets": [
+          "public/brand-logo.svg"
+        ],
+        "visual_assets_available": false
+      },
+      {
+        "id": "cta",
+        "headline": "Explore the project",
+        "description": "Close on the repository identity with source assets marked unavailable until explicitly imported.",
+        "motion_preset": "fade",
+        "evidence": [
+          "README.md",
+          "package.json",
+          "components/FeatureGrid.tsx",
+          "components/Hero.tsx"
+        ],
+        "visual_assets": [],
+        "visual_assets_available": false
+      }
+    ],
+    "cta": "Explore the project",
+    "confidence": 0.55,
+    "fallback_used": true,
+    "model": "static-rules-v1"
+  },
+  "confidence": 0.735,
+  "warnings": [
+    "Static analysis only. Repository scripts, package lifecycle hooks, imports, and build commands were not executed.",
+    "Source assets are referenced by path but are not retained, decoded, or available to the video renderer.",
+    "Product descriptions and category are heuristic readings of README and package metadata."
+  ]
+}

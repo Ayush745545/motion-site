@@ -1,0 +1,9 @@
+:root {
+  --brand-ink: #171a21;
+  --brand-accent: #5267eb;
+  --space-panel: 1.5rem;
+  --radius-card: 12px;
+  --font-display: "Atlas Serif", Georgia, serif;
+}
+
+.hero { transition: opacity 240ms ease-out; }

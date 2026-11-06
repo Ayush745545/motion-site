@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "brief": {
+    "content_summary": "",
+    "product_category": "auto",
+    "target_audience": "Website visitors",
+    "duration_seconds": 15,
+    "motion_style": "cinematic",
+    "aspect_ratio": "landscape",
+    "variant": 0
+  },
+  "analysis_id": "12345678-1234-4234-8234-123456789012",
+  "category": "saas",
+  "category_confidence": 0.8500000000000001,
+  "creative_concept": "Interface first, then evidenced product benefits. For Website visitors.",
+  "opening_hook": "Plan projects in one workspace.",
+  "scenes": [
+    {
+      "kind": "intro",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 72,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "intro",
+      "description": "Introduce the brand with the source headline and animated identity.",
+      "headline": "Plan projects in one workspace.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Plan projects in one workspace."
+      ]
+    },
+    {
+      "kind": "reveal",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 144,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "reveal",
+      "description": "Reveal the captured website with a controlled camera move.",
+      "headline": "Plan projects in one workspace.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Plan projects in one workspace."
+      ]
+    },
+    {
+      "kind": "features",
+      "fact_ids": [
+        "fact-0",
+        "fact-1",
+        "fact-2"
+      ],
+      "duration_frames": 153,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "features",
+      "description": "Present source-backed highlights as staggered cards.",
+      "headline": "Plan projects in one workspace.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Plan projects in one workspace.",
+        "Flowdesk is SaaS software for small teams.",
+        "Track project milestones in a dashboard."
+      ]
+    },
+    {
+      "kind": "cta",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 81,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "cta",
+      "description": "Close with the website address and source call to action.",
+      "headline": "Start exploring Flowdesk",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Plan projects in one workspace."
+      ]
+    }
+  ],
+  "cta": "Start exploring Flowdesk",
+  "evidence": [
+    {
+      "id": "fact-0",
+      "text": "Plan projects in one workspace.",
+      "source": "website"
+    },
+    {
+      "id": "fact-1",
+      "text": "Flowdesk is SaaS software for small teams.",
+      "source": "website"
+    },
+    {
+      "id": "fact-2",
+      "text": "Track project milestones in a dashboard.",
+      "source": "website"
+    },
+    {
+      "id": "fact-3",
+      "text": "Share project notes with your team.",
+      "source": "website"
+    },
+    {
+      "id": "fact-4",
+      "text": "Start exploring Flowdesk",
+      "source": "website"
+    }
+  ],
+  "generation": {
+    "provider": "deterministic",
+    "model": "rules-v1",
+    "requested_provider": "deterministic",
+    "requested_model": "rules-v1",
+    "fallback_used": true,
+    "fallback_reason": "No LLM configured; deterministic direction selected.",
+    "confidence": 0.85,
+    "warnings": [
+      "Source quotations are used verbatim; editorial descriptions describe visuals only.",
+      "User-provided summaries are treated as supplied evidence, not independently verified.",
+      "No captured screenshot reference is available; capture the site before rendering."
+    ]
+  },
+  "fps": 30,
+  "total_frames": 450,
+  "edited": false
+}

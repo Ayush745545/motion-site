@@ -1,0 +1,316 @@
+.director-page {
+  overflow-wrap: anywhere;
+}
+.director-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0,1fr);
+  gap: 24px;
+  align-items: start;
+}
+.director-layout>* {
+  min-width: 0;
+}
+.director-alert,.director-brief,.director-concept,.director-empty,.director-evidence,.director-preview,.director-scene {
+  padding: 24px;
+}
+.director-page h2 {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.director-page p {
+  font-size: 12px;
+  color: #99a6b9;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+.director-page label {
+  display: grid;
+  gap: 8px;
+  font-size: 11px;
+  color: #a5b1c3;
+  margin: 18px 0;
+}
+.director-page input,.director-page select,.director-page textarea {
+  width: 100%;
+  background: #0d1117;
+  color: #d4dfec;
+  border: 1px solid #ffffff18;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+  resize: vertical;
+}
+.director-page small {
+  display: block;
+  font-size: 10px;
+  color: #8795a8;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.director-story {
+  display: grid;
+  gap: 20px;
+}
+.director-brief>a {
+  font-size: 12px;
+  color: #80aaff;
+}
+.director-concept>div {
+  font-size: 11px;
+  color: #80aaff;
+}
+.director-scene header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.director-scene header span {
+  margin-left: auto;
+  font-size: 11px;
+  color: #8f9db1;
+}
+.director-scene-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.director-page details {
+  font-size: 11px;
+  color: #9eabc0;
+  margin: 16px 0;
+}
+.director-page summary {
+  cursor: pointer;
+}
+.director-page code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  margin-top: 10px;
+}
+.director-preview h2 {
+  margin-bottom: 18px;
+}
+.director-preview-seek {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.director-preview-seek button {
+  font-size: 11px;
+  background: #15203a;
+  color: #aac8ff;
+  border: 1px solid #2563eb55;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+.director-empty {
+  min-height: 250px;
+  display: grid;
+  place-content: center;
+}
+.director-alert {
+  border-color: #efb4a733;
+}
+.director-preview>div:first-of-type {
+  max-height: 600px;
+  margin: auto;
+}
+@media(max-width:1050px) {
+  .director-layout {
+    grid-template-columns: 250px minmax(0,1fr);
+  }
+  .director-brief,.director-preview,.director-scene {
+    padding: 18px;
+  }
+}
+@media(max-width:760px) {
+  .director-layout {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .director-brief {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+  }
+  .director-brief>* {
+    grid-column: 1/-1;
+  }
+  .director-scene header span {
+    margin-left: 0;
+  }
+  .director-preview {
+    padding: 12px;
+  }
+  .director-preview-seek {
+    gap: 6px;
+  }
+}
+/* Quiet surfaces and comfortable reading for the storyboard workflow. */
+.director-page .director-layout {
+  grid-template-columns: 290px minmax(0,1fr);
+  gap: 22px;
+}
+.director-page .panel {
+  border-radius: 20px;
+  border-color: #303030;
+  background: #171717;
+}
+.director-page .director-brief,.director-page .director-concept,.director-page .director-scene,.director-page .director-evidence,.director-page .director-preview {
+  padding: 25px;
+}
+.director-page h2 {
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -.35px;
+}
+.director-page p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #a0a0a0;
+  margin: 13px 0;
+}
+.director-page label {
+  font-size: 12px;
+  color: #b8b8b8;
+  margin: 20px 0;
+  gap: 9px;
+}
+.director-page input,.director-page textarea,.director-page select {
+  min-height: 42px;
+  background: #111;
+  color: #d4d4d4;
+  border-color: #3a3a3a;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.director-page small {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8e8e8e;
+}
+.director-page .director-story {
+  gap: 22px;
+}
+.director-page .director-brief>a {
+  font-size: 11px;
+  color: #b8c8aa;
+}
+.director-page .director-concept>div {
+  font-size: 11px;
+  color: #b8c8aa;
+  line-height: 1.9;
+}
+.director-page .director-scene header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+  gap: 10px;
+}
+.director-page .director-scene header span {
+  font-size: 10px;
+  color: #999;
+}
+.director-page .director-scene-selects {
+  gap: 17px;
+}
+.director-page .director-preview-seek button {
+  font-size: 11px;
+  background: #252525;
+  color: #c5c5c5;
+  border-color: #414141;
+  border-radius: 9px;
+  min-height: 37px;
+  padding: 10px 13px;
+}
+.director-page .director-preview-seek button:hover {
+  background: #333;
+  color: #fff;
+}
+.director-page details {
+  font-size: 11px;
+  color: #989898;
+}
+.director-page summary {
+  min-height: 28px;
+}
+.director-page .director-evidence>p {
+  border-bottom: 1px solid #2e2e2e;
+  padding-bottom: 13px;
+}
+.director-page .director-evidence strong {
+  font-size: 10px;
+  color: #c0cbb6;
+  letter-spacing: .7px;
+}
+.director-page .director-alert {
+  background: #241b17;
+  border-color: #4c3930;
+  color: #d0b29c;
+  padding: 21px;
+}
+.director-page .director-empty {
+  min-height: 300px;
+  text-align: left;
+  background: #141414;
+  border-style: dashed;
+  border-color: #3d3d3d;
+}
+@media(max-width:1150px) {
+  .director-page .director-layout {
+    grid-template-columns: 260px minmax(0,1fr);
+    gap: 18px;
+  }
+  .director-page .director-brief,.director-page .director-scene,.director-page .director-preview {
+    padding: 20px;
+  }
+}
+@media(max-width:960px) {
+  .director-page .director-layout {
+    grid-template-columns: minmax(0,1fr);
+  }
+  .director-page .director-brief {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .director-page .director-brief>h2,.director-page .director-brief>p,.director-page .director-brief>a,.director-page .director-brief>label:first-of-type,.director-page .director-brief>small,.director-page .director-brief>button {
+    grid-column: 1/-1;
+  }
+  .director-page .director-brief>button {
+    justify-self: start;
+  }
+}
+@media(max-width:760px) {
+  .director-page .director-brief {
+    display: block;
+  }
+  .director-page .director-brief,.director-page .director-concept,.director-page .director-scene,.director-page .director-evidence {
+    padding: 21px;
+  }
+  .director-page .director-preview {
+    padding: 16px;
+  }
+  .director-page .director-scene header {
+    gap: 8px;
+  }
+  .director-page .director-scene header span {
+    font-size: 10px;
+    margin-left: 0;
+  }
+  .director-page .director-scene-selects {
+    gap: 12px;
+  }
+  .director-page .director-story {
+    gap: 17px;
+  }
+  .director-page h2 {
+    font-size: 16px;
+  }
+}

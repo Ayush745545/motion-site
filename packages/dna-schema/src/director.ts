@@ -1,0 +1,13 @@
+import { z } from "zod";
+const text=z.string().min(1).max(240);
+export const CategorySchema=z.enum(["saas","ecommerce","portfolio","agency","mobile","technology"]);
+export const StyleSchema=z.enum(["cinematic","saas","typography","technology","walkthrough"]);
+export const BriefSchema=z.object({content_summary:z.string().max(6000),product_category:z.enum(["auto","saas","ecommerce","portfolio","agency","mobile","technology"]),target_audience:z.string().min(1).max(160),duration_seconds:z.number().int().min(8).max(60),motion_style:StyleSchema,aspect_ratio:z.enum(["landscape","portrait"]),variant:z.number().int().min(0).max(9999)}).strict();
+export const DirectedSceneSchema=z.object({kind:z.enum(["intro","reveal","features","cta"]),id:z.enum(["intro","reveal","features","cta"]),fact_ids:z.array(z.string()).max(3),duration_frames:z.number().int().min(30).max(1500),motion_preset:z.enum(["fade","slide","spring","parallax"]),transition:z.enum(["fade","slide","cut"]),description:text,headline:z.string().min(1).max(100),visual_asset_refs:z.array(z.string().max(2048)).max(8),supporting_copy:z.array(text).max(3)}).strict();
+export const StoryboardSchema=z.object({schema_version:z.literal("1.0"),brief:BriefSchema,analysis_id:z.uuid(),category:CategorySchema,category_confidence:z.number().min(0).max(1),creative_concept:text,opening_hook:z.string().min(1).max(100),scenes:z.array(DirectedSceneSchema).length(4),cta:z.string().min(1).max(72),evidence:z.array(z.object({id:z.string().regex(/^fact-[0-9]+$/),text,source:z.enum(["website","provided_summary"])}).strict()).max(24),generation:z.object({provider:z.enum(["deterministic","local","api"]),model:text,requested_provider:z.enum(["deterministic","local","api"]),requested_model:z.string().max(240),fallback_used:z.boolean(),fallback_reason:z.string().max(240).nullable(),confidence:z.number().min(0).max(1),warnings:z.array(text).max(12)}).strict(),fps:z.literal(30),total_frames:z.number().int().min(240).max(1800),edited:z.boolean()}).strict().superRefine((story,context)=>{
+ if(new Set(story.scenes.map(scene=>scene.kind)).size!==4||story.scenes.some(scene=>scene.id!==scene.kind))context.addIssue({code:"custom",message:"Four unique scenes required"});
+ if(story.scenes.reduce((sum,scene)=>sum+scene.duration_frames,0)!==story.total_frames||story.total_frames!==story.brief.duration_seconds*30)context.addIssue({code:"custom",message:"Frame durations must match the brief"});
+ const facts=new Set(story.evidence.map(fact=>fact.id));if(story.scenes.some(scene=>scene.fact_ids.some(id=>!facts.has(id))))context.addIssue({code:"custom",message:"Unknown evidence reference"});
+});
+export type Storyboard=z.infer<typeof StoryboardSchema>;
+export type DirectorBrief=z.infer<typeof BriefSchema>;

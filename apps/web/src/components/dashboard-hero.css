@@ -1,0 +1,225 @@
+.app-shell .dashboard-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 36px 16px 40px;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.app-shell .dashboard-intro h1 {
+  max-width: 1120px;
+  color: #f5f5f7;
+  font-size: clamp(32px, 3vw, 50px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: -1.7px;
+  text-wrap: balance;
+}
+
+.dashboard-intro-highlight {
+  display: inline-block;
+  padding: 0 14px;
+  margin: 0 3px;
+  border: 1px solid #35353d;
+  border-radius: 15px;
+  background: #202026;
+  color: #ffce32;
+  line-height: 1.42;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 #ffffff06;
+}
+
+.dashboard-intro > p {
+  max-width: 850px;
+  margin: 12px 0 0;
+  color: #9b9ba5;
+  font-size: clamp(15px, 1.4vw, 20px);
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+.dashboard-intro-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 27px;
+}
+
+.app-shell .dashboard-intro-actions [data-ui-button] {
+  height: 54px;
+  min-width: 175px;
+  padding: 0 29px;
+  gap: 12px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.app-shell .dashboard-intro-actions .dashboard-intro-primary {
+  border: 1px solid #40c5f5;
+  background: linear-gradient(180deg, #007faf, #006fa4);
+  color: #fff;
+  box-shadow: inset 0 1px 0 #ffffff50, 0 5px 24px #009eda26;
+}
+
+.app-shell .dashboard-intro-actions .dashboard-intro-primary:hover {
+  border-color: #7fdcff;
+  background: linear-gradient(180deg, #0076a8, #006699);
+  color: #fff;
+}
+
+.app-shell .dashboard-intro-actions .dashboard-intro-secondary {
+  border: 1px solid #303038;
+  background: #19191f;
+  color: #e8e8ed;
+}
+
+.app-shell .dashboard-intro-actions .dashboard-intro-secondary:hover {
+  border-color: #50505d;
+  background: #23232c;
+}
+
+@property --shortcut-edge-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.dashboard-shortcuts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  max-width: 100%;
+  padding: 5px;
+  margin-top: 53px;
+  border: 0;
+  border-radius: 999px;
+  background: #141419;
+}
+
+/* The mask keeps the moving light on the edge and clear of the links. */
+.dashboard-shortcuts::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--shortcut-edge-angle),
+    transparent 0deg 255deg,
+    #2563eb55 285deg,
+    #38bdf8 315deg,
+    #d7f1ff 330deg,
+    transparent 350deg 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: shortcut-edge-orbit 5s linear infinite;
+}
+
+@keyframes shortcut-edge-orbit {
+  to {
+    --shortcut-edge-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-shortcuts::before {
+    animation: none;
+    background: #353b49;
+  }
+}
+
+[data-reduced-motion=true] .dashboard-shortcuts::before {
+  animation: none;
+  background: #353b49;
+}
+
+.dashboard-shortcuts > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 21px;
+  gap: 10px;
+  border-radius: 999px;
+  color: #a2a2ae;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: background .18s, color .18s;
+}
+
+.dashboard-shortcuts > a.shortcut-featured {
+  background: #25252f;
+  color: #d2d2dc;
+}
+
+.dashboard-shortcuts > a:hover {
+  background: #2d2d37;
+  color: #fff;
+}
+
+@media (max-width: 1150px) {
+  .app-shell .dashboard-intro h1 {
+    font-size: 36px;
+  }
+  .dashboard-shortcuts > a {
+    padding: 0 15px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell .dashboard-intro {
+    padding: 16px 0 27px;
+  }
+  .app-shell .dashboard-intro h1 {
+    font-size: 32px;
+    line-height: 1.55;
+    letter-spacing: -1.1px;
+  }
+  .dashboard-intro-highlight {
+    padding: 0 11px;
+    border-radius: 11px;
+  }
+  .dashboard-intro > p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .dashboard-intro-break {
+    display: none;
+  }
+  .dashboard-intro-actions {
+    gap: 10px;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .app-shell .dashboard-intro-actions [data-ui-button] {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+    padding: 0 13px;
+    gap: 7px;
+    font-size: 14px;
+  }
+  .dashboard-shortcuts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-top: 34px;
+    border-radius: 22px;
+  }
+  .dashboard-shortcuts > a {
+    min-height: 43px;
+    padding: 0 10px;
+    gap: 8px;
+    font-size: 13px;
+  }
+}

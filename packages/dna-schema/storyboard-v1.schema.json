@@ -1,0 +1,389 @@
+{
+  "$defs": {
+    "Brief": {
+      "additionalProperties": false,
+      "properties": {
+        "content_summary": {
+          "default": "",
+          "maxLength": 6000,
+          "title": "Content Summary",
+          "type": "string"
+        },
+        "product_category": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "saas",
+            "ecommerce",
+            "portfolio",
+            "agency",
+            "mobile",
+            "technology"
+          ],
+          "title": "Product Category",
+          "type": "string"
+        },
+        "target_audience": {
+          "default": "Website visitors",
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Target Audience",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "default": 15,
+          "maximum": 60,
+          "minimum": 8,
+          "title": "Duration Seconds",
+          "type": "integer"
+        },
+        "motion_style": {
+          "default": "cinematic",
+          "enum": [
+            "cinematic",
+            "saas",
+            "typography",
+            "technology",
+            "walkthrough"
+          ],
+          "title": "Motion Style",
+          "type": "string"
+        },
+        "aspect_ratio": {
+          "default": "landscape",
+          "enum": [
+            "landscape",
+            "portrait"
+          ],
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "variant": {
+          "default": 0,
+          "maximum": 9999,
+          "minimum": 0,
+          "title": "Variant",
+          "type": "integer"
+        }
+      },
+      "title": "Brief",
+      "type": "object"
+    },
+    "Fact": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^fact-[0-9]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "website",
+            "provided_summary"
+          ],
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "source"
+      ],
+      "title": "Fact",
+      "type": "object"
+    },
+    "Generation": {
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "enum": [
+            "deterministic",
+            "local",
+            "api"
+          ],
+          "title": "Provider",
+          "type": "string"
+        },
+        "model": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Model",
+          "type": "string"
+        },
+        "requested_provider": {
+          "enum": [
+            "deterministic",
+            "local",
+            "api"
+          ],
+          "title": "Requested Provider",
+          "type": "string"
+        },
+        "requested_model": {
+          "maxLength": 240,
+          "title": "Requested Model",
+          "type": "string"
+        },
+        "fallback_used": {
+          "title": "Fallback Used",
+          "type": "boolean"
+        },
+        "fallback_reason": {
+          "anyOf": [
+            {
+              "maxLength": 240,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fallback Reason"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "warnings": {
+          "items": {
+            "maxLength": 240,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 12,
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "provider",
+        "model",
+        "requested_provider",
+        "requested_model",
+        "fallback_used",
+        "confidence",
+        "warnings"
+      ],
+      "title": "Generation",
+      "type": "object"
+    },
+    "Scene": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "intro",
+            "reveal",
+            "features",
+            "cta"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "fact_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Fact Ids",
+          "type": "array"
+        },
+        "duration_frames": {
+          "maximum": 1500,
+          "minimum": 30,
+          "title": "Duration Frames",
+          "type": "integer"
+        },
+        "motion_preset": {
+          "enum": [
+            "fade",
+            "slide",
+            "spring",
+            "parallax"
+          ],
+          "title": "Motion Preset",
+          "type": "string"
+        },
+        "transition": {
+          "enum": [
+            "fade",
+            "slide",
+            "cut"
+          ],
+          "title": "Transition",
+          "type": "string"
+        },
+        "id": {
+          "enum": [
+            "intro",
+            "reveal",
+            "features",
+            "cta"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 240,
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "headline": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Headline",
+          "type": "string"
+        },
+        "visual_asset_refs": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Visual Asset Refs",
+          "type": "array"
+        },
+        "supporting_copy": {
+          "items": {
+            "maxLength": 240,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Supporting Copy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "fact_ids",
+        "duration_frames",
+        "motion_preset",
+        "transition",
+        "id",
+        "description",
+        "headline",
+        "visual_asset_refs",
+        "supporting_copy"
+      ],
+      "title": "Scene",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "brief": {
+      "$ref": "#/$defs/Brief"
+    },
+    "analysis_id": {
+      "pattern": "^[0-9a-f-]{36}$",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "saas",
+        "ecommerce",
+        "portfolio",
+        "agency",
+        "mobile",
+        "technology"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "category_confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Category Confidence",
+      "type": "number"
+    },
+    "creative_concept": {
+      "maxLength": 240,
+      "minLength": 1,
+      "title": "Creative Concept",
+      "type": "string"
+    },
+    "opening_hook": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Opening Hook",
+      "type": "string"
+    },
+    "scenes": {
+      "items": {
+        "$ref": "#/$defs/Scene"
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "title": "Scenes",
+      "type": "array"
+    },
+    "cta": {
+      "maxLength": 72,
+      "minLength": 1,
+      "title": "Cta",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Fact"
+      },
+      "maxItems": 24,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "generation": {
+      "$ref": "#/$defs/Generation"
+    },
+    "fps": {
+      "const": 30,
+      "default": 30,
+      "title": "Fps",
+      "type": "integer"
+    },
+    "total_frames": {
+      "maximum": 1800,
+      "minimum": 240,
+      "title": "Total Frames",
+      "type": "integer"
+    },
+    "edited": {
+      "default": false,
+      "title": "Edited",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "brief",
+    "analysis_id",
+    "category",
+    "category_confidence",
+    "creative_concept",
+    "opening_hook",
+    "scenes",
+    "cta",
+    "evidence",
+    "generation",
+    "total_frames"
+  ],
+  "title": "Storyboard",
+  "type": "object"
+}

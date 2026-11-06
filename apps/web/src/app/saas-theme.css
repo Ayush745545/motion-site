@@ -1,0 +1,1737 @@
+/* Application chrome only. Composition colors and frame styles remain source-driven. */
+@font-face {
+  font-family: "Studio UI";
+  src: url("/motion/fonts/sans-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Studio UI";
+  src: url("/motion/fonts/sans-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+}
+html:root {
+  --background: #0b0b0b;
+  --foreground: #eeeeee;
+  --card: #171717;
+  --card-foreground: #ededed;
+  --popover: #1b1b1b;
+  --popover-foreground: #eee;
+  --primary: #e8e8e8;
+  --primary-foreground: #121212;
+  --secondary: #242424;
+  --secondary-foreground: #ddd;
+  --muted: #1c1c1c;
+  --muted-foreground: #a0a0a0;
+  --accent: #292929;
+  --accent-foreground: #f5f5f5;
+  --border: #2c2c2c;
+  --input: #393939;
+  --ring: #7398eb;
+  --radius: .85rem;
+  --blue: #2563eb;
+  --blue-light: #a6bff5;
+  --subtle: #858585;
+}
+html body {
+  background: #0b0b0b;
+  color: #eee;
+  font-family: "Studio UI",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size: 14px;
+}
+[data-ui-button=true] {
+  min-height: 39px;
+  border-radius: 10px;
+  letter-spacing: -.1px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: none;
+  transition: background .18s,color .18s,border-color .18s,transform .18s;
+}
+[data-ui-button=true][data-variant=default] {
+  background: #e8e8e8;
+  color: #141414;
+  border: 1px solid #f2f2f255;
+  box-shadow: 0 1px 2px #0003;
+}
+[data-ui-button=true][data-variant=default]:hover {
+  background: #fff;
+  color: #111;
+}
+[data-ui-button=true][data-variant=outline] {
+  background: #1b1b1b;
+  border-color: #383838;
+  color: #dedede;
+}
+[data-ui-button=true][data-variant=outline]:hover {
+  background: #292929;
+  border-color: #505050;
+}
+[data-ui-button=true][data-variant=ghost] {
+  color: #aaa;
+  background: transparent;
+}
+[data-ui-button=true][data-variant=ghost]:hover {
+  background: #252525;
+  color: #eee;
+}
+[data-ui-button=true][data-size=icon] {
+  width: 37px;
+  height: 37px;
+  min-height: 37px;
+  padding: 0;
+  border-radius: 10px;
+}
+[data-ui-button=true][data-size=sm] {
+  min-height: 34px;
+  font-size: 11px;
+}
+[data-ui-button=true][data-variant=destructive] {
+  background: #743435;
+  color: #fff;
+  border: 1px solid #9d5052;
+}
+.app-shell .panel {
+  background: #171717;
+  border-color: #2b2b2b;
+  border-radius: 20px;
+  box-shadow: none;
+}
+.app-shell h1 {
+  font-size: 32px;
+  letter-spacing: -1.1px;
+  line-height: 1.2;
+  font-weight: 650;
+}
+.app-shell .page-heading {
+  margin-bottom: 30px;
+  gap: 24px;
+}
+.app-shell .page-heading .muted {
+  font-size: 13px;
+  color: #a0a0a0;
+  margin-top: 11px;
+  line-height: 1.7;
+}
+.app-shell .page-heading>a,.app-shell .page-heading>button {
+  font-size: 12px;
+  height: 40px;
+}
+.app-shell .page-kicker {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  color: #858585;
+  margin-bottom: 14px;
+}
+.app-shell .heading-dot {
+  color: #a5a5a5;
+}
+.app-shell .dashboard-stats {
+  gap: 0;
+  background: #171717;
+  border: 1px solid #292929;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 22px 0 36px;
+}
+.app-shell .stat-card {
+  padding: 22px 24px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid #2b2b2b;
+  border-radius: 0;
+  gap: 0;
+  box-shadow: none;
+}
+.app-shell .stat-card:last-child {
+  border: 0;
+}
+.app-shell .stat-card>div {
+  font-size: 11px;
+  color: #999;
+}
+.app-shell .stat-card>div>svg {
+  color: #737373;
+}
+.app-shell .stat-card>strong {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 13px 0 5px;
+  letter-spacing: -1px;
+}
+.app-shell .stat-card>strong.stat-text {
+  font-size: 22px;
+  letter-spacing: -.6px;
+  margin: 17px 0 9px;
+  color: #ddd;
+}
+.app-shell .stat-card>small {
+  font-size: 10px;
+  color: #787878;
+}
+.app-shell .section-heading h2 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+}
+.app-shell .section-heading h2>span {
+  font-size: 10px;
+  background: #262626;
+  border-color: #363636;
+  color: #aaa;
+  padding: 3px 7px;
+  border-radius: 7px;
+}
+.app-shell .section-heading p {
+  font-size: 12px;
+  color: #898989;
+  margin-top: 7px;
+}
+.app-shell .view-switch {
+  background: #161616;
+  border-color: #323232;
+  padding: 3px;
+  border-radius: 11px;
+}
+.app-shell .view-switch [data-ui-button] {
+  width: 33px;
+  height: 31px;
+  min-height: 31px;
+  border-radius: 7px;
+  color: #888;
+}
+.app-shell .view-switch button[aria-pressed=true] {
+  background: #2c2c2c;
+  color: #ddd;
+}
+.app-shell .project-toolbar {
+  margin: 22px 0 20px;
+  gap: 16px;
+}
+.app-shell .project-search {
+  width: 320px;
+  color: #858585;
+}
+.app-shell .project-search>svg {
+  top: 12px;
+  left: 13px;
+}
+.app-shell .project-search input {
+  height: 42px;
+  background: #151515;
+  border-color: #303030;
+  border-radius: 11px;
+  padding-left: 40px;
+  font-size: 12px;
+}
+.app-shell .project-sort {
+  border-color: #303030;
+  background: #151515;
+  border-radius: 11px;
+  gap: 10px;
+  padding: 0 12px;
+}
+.app-shell .project-sort select {
+  font-size: 12px;
+  height: 40px;
+  color: #bbb;
+  max-width: 140px;
+}
+.app-shell .project-collection {
+  gap: 18px;
+}
+.app-shell .project-card {
+  background: #171717;
+  border: 1px solid #303030;
+  border-radius: 18px;
+  box-shadow: none;
+}
+.app-shell .project-card:hover {
+  border-color: #555;
+  transform: translateY(-2px);
+}
+.app-shell .project-thumbnail {
+  height: 180px;
+  padding: 38px 25px;
+}
+.app-shell .project-thumbnail>strong {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -.7px;
+}
+.app-shell .project-draft-badge {
+  border-radius: 20px;
+  padding: 4px 8px;
+  font-size: 8px;
+  letter-spacing: .4px;
+}
+.app-shell .project-thumbnail-art {
+  height: 150px;
+  width: 150px;
+  border-width: 22px;
+  border-radius: 37px;
+  right: 5px;
+}
+.app-shell .project-thumbnail-size {
+  font-size: 9px;
+  color: #b9b9b9;
+}
+.app-shell .project-card-description {
+  padding: 18px 19px 10px;
+  border-color: #2a2a2a;
+}
+.app-shell .project-card-description h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.app-shell .project-card-description p {
+  font-size: 10px;
+  color: #999;
+  margin-top: 7px;
+  line-height: 1.7;
+}
+.project-open-icon {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #363636;
+  border-radius: 50%;
+  color: #aaa;
+}
+.app-shell .delete-project-row {
+  padding: 3px 10px 10px;
+}
+.app-shell .delete-project-row button {
+  font-size: 10px;
+  height: 28px;
+  min-height: 28px;
+  color: #8e8585;
+}
+.app-shell .empty-projects {
+  border: 1px dashed #383838;
+  background: #131313;
+  border-radius: 20px;
+  min-height: 285px;
+  padding: 34px 24px;
+}
+.empty-project-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 59px;
+  height: 59px;
+  background: #262626;
+  border: 1px solid #3a3a3a;
+  border-radius: 18px;
+  color: #ccc;
+  margin-bottom: 19px;
+}
+.empty-project-icon>span {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e1e4dc;
+  color: #222;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #131313;
+  font-size: 14px;
+}
+.app-shell .empty-projects h3 {
+  font-size: 18px;
+  font-weight: 550;
+  color: #e1e1e1;
+  margin-bottom: 9px;
+}
+.app-shell .empty-projects p {
+  font-size: 12px;
+  color: #929292;
+  max-width: 360px;
+  margin-bottom: 21px;
+}
+.app-shell .empty-projects>small {
+  font-size: 10px;
+  color: #777;
+  margin-top: 13px;
+}
+.app-shell .empty-projects>a {
+  height: 38px;
+  font-size: 12px;
+}
+.dashboard-workflow {
+  margin-top: 38px;
+}
+.workflow-label {
+  font-size: 9px;
+  letter-spacing: 1.3px;
+  color: #727272;
+}
+.workflow-cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 17px;
+}
+.workflow-card {
+  border: 1px solid #2b2b2b;
+  border-radius: 19px;
+  padding: 24px;
+  background: #151515;
+  transition: border-color .18s,background .18s;
+}
+.workflow-card:hover {
+  background: #1b1b1b;
+  border-color: #474747;
+}
+.workflow-card>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23px;
+}
+.workflow-card>div>span:last-child {
+  font-size: 11px;
+  font-family: monospace;
+  color: #686868;
+}
+.workflow-icon {
+  width: 41px;
+  height: 41px;
+  border-radius: 13px;
+  background: #292929;
+  color: #c7c7c7;
+  display: grid;
+  place-items: center;
+}
+.workflow-card:nth-child(2) .workflow-icon {
+  background: #282d24;
+  color: #bac9aa;
+}
+.workflow-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+.workflow-card p {
+  font-size: 11px;
+  color: #919191;
+  line-height: 1.8;
+  min-height: 58px;
+}
+.workflow-card>strong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  color: #c6c6c6;
+  margin-top: 22px;
+}
+.app-shell .create-layout {
+  grid-template-columns: minmax(0,1.5fr) minmax(270px,1fr);
+  gap: 22px;
+}
+.app-shell .form-panel,.app-shell .settings-card {
+  padding: 29px;
+}
+.app-shell .form-section-heading,.app-shell .settings-section-heading {
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.app-shell .form-section-heading h2,.app-shell .settings-section-heading h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.app-shell .form-section-heading p,.app-shell .settings-section-heading p {
+  font-size: 11px;
+  color: #929292;
+}
+.app-shell .form-section-number,.app-shell .settings-section-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #2a2a2a;
+  border-color: #3c3c3c;
+  color: #ccc;
+  font-size: 13px;
+}
+.app-shell .field {
+  margin-bottom: 24px;
+}
+.app-shell .field>label {
+  font-size: 12px;
+  color: #d2d2d2;
+  margin-bottom: 10px;
+}
+.app-shell .field input,.app-shell .field select,.app-shell .field textarea {
+  background: #121212;
+  border-color: #373737;
+  border-radius: 10px;
+  color: #e3e3e3;
+  font-size: 13px;
+  min-height: 43px;
+}
+.app-shell .field-help {
+  font-size: 11px;
+  color: #909090;
+  line-height: 1.8;
+  margin-top: 9px;
+}
+.app-shell .source-choice {
+  border-radius: 13px;
+  padding: 15px 13px;
+  background: #141414;
+  border-color: #353535;
+  min-height: 85px;
+  text-align: left;
+  gap: 12px;
+}
+.app-shell .source-choice strong {
+  font-size: 12px;
+  color: #ccc;
+}
+.app-shell .source-choice small {
+  font-size: 10px;
+  color: #8d8d8d;
+}
+.app-shell .source-choice.is-selected {
+  background: #252525;
+  border-color: #717171;
+}
+.app-shell .source-choice-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #303030;
+  color: #ddd;
+}
+.app-shell .source-choice-radio {
+  border-color: #777;
+}
+.app-shell .is-selected .source-choice-radio {
+  border-color: #ddd;
+}
+.app-shell .url-input-wrap>span {
+  color: #999;
+  top: 13px;
+}
+.app-shell .source-upload {
+  background: #121212;
+  border-color: #444;
+  border-radius: 14px;
+  padding: 26px;
+}
+.app-shell .source-upload strong {
+  font-size: 13px;
+}
+.app-shell .source-upload>p {
+  font-size: 11px;
+}
+.app-shell .source-upload input {
+  max-width: 100%;
+  font-size: 11px;
+  min-height: 33px;
+}
+.app-shell .upload-symbol {
+  color: #b9c9ae;
+}
+.app-shell .code-input {
+  font-size: 12px;
+  background: #111;
+  border-color: #383838;
+  border-radius: 12px;
+  padding: 15px;
+}
+.app-shell .form-notice {
+  background: #1e211c;
+  border: 1px solid #353d30;
+  border-radius: 13px;
+  padding: 17px;
+  gap: 12px;
+  color: #a8b99a;
+}
+.app-shell .form-notice strong {
+  font-size: 12px;
+  color: #c6d0bb;
+}
+.app-shell .form-notice p {
+  font-size: 11px;
+  color: #929e8a;
+  line-height: 1.8;
+  margin-top: 5px;
+}
+.app-shell .form-actions {
+  padding-top: 22px;
+  border-color: #303030;
+}
+.app-shell .form-error {
+  font-size: 12px;
+  color: #edb3a8;
+}
+.app-shell .project-preview-card {
+  padding: 25px;
+}
+.app-shell .create-preview-art {
+  border-radius: 13px;
+  background: #deded7;
+  color: #282c24;
+  border: 0;
+  min-height: 190px;
+}
+.app-shell .create-preview-art>span {
+  font-family: Georgia,serif;
+  color: #353d2a;
+  font-size: 32px;
+  letter-spacing: -1px;
+  font-weight: 400;
+}
+.app-shell .create-preview-art>div {
+  border-color: #abb89a66;
+  border-radius: 50%;
+  border-width: 15px;
+}
+.app-shell .create-preview-art i {
+  color: #8c9c78;
+}
+.app-shell .project-preview-card h3 {
+  font-size: 17px;
+  margin-top: 23px;
+}
+.app-shell .project-preview-card>.muted {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #999;
+}
+.app-shell .project-benefits {
+  font-size: 11px;
+  color: #aaa;
+  gap: 12px;
+}
+.app-shell .project-benefits span {
+  color: #9cb18b;
+}
+.app-shell .project-defaults {
+  border-color: #333;
+  font-size: 11px;
+}
+.app-shell .project-defaults strong {
+  font-size: 12px;
+  color: #ccc;
+}
+.app-shell .project-defaults a {
+  font-size: 11px;
+  color: #b8c9a8;
+}
+.app-shell .create-local-note {
+  font-size: 11px;
+  color: #878787;
+  line-height: 1.8;
+}
+.app-shell .step-indicator {
+  font-size: 20px;
+  color: #999;
+}
+.app-shell .step-indicator small {
+  font-size: 11px;
+  color: #858585;
+}
+.app-shell .settings-grid {
+  gap: 22px;
+}
+.app-shell .field-grid {
+  gap: 23px;
+}
+.app-shell .settings-card-footer {
+  border-color: #303030;
+  padding-top: 22px;
+}
+.app-shell .settings-success {
+  font-size: 11px;
+  color: #9fae93;
+}
+.app-shell .local-label {
+  font-size: 9px;
+  background: #1c1c1c;
+  border-color: #343434;
+  color: #a6a6a6;
+  border-radius: 20px;
+  padding: 8px 12px;
+}
+.app-shell .preference-row {
+  border-color: #303030;
+  gap: 25px;
+}
+.app-shell .preference-row label {
+  font-size: 13px;
+}
+.app-shell .preference-row .muted {
+  font-size: 11px;
+  color: #8f8f8f;
+}
+.app-shell .switch-control {
+  background: #393939;
+  border-color: #555;
+  width: 38px;
+  height: 23px;
+}
+.app-shell .switch-control:before {
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  background: #c7c7c7;
+}
+.app-shell .switch-control:checked {
+  background: #cbd5c0;
+  border-color: #d9e3d0;
+}
+.app-shell .switch-control:checked:before {
+  background: #293122;
+  transform: translateX(15px);
+}
+.app-shell .storage-stat>strong {
+  font-size: 46px;
+  color: #e2e2e2;
+}
+.app-shell .storage-stat>span {
+  font-size: 13px;
+  color: #bbb;
+}
+.app-shell .storage-stat small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #888;
+}
+.app-shell .storage-description {
+  font-size: 12px;
+  color: #969696;
+  line-height: 1.9;
+}
+.app-shell .storage-state {
+  font-size: 11px;
+  color: #a8bd99;
+  border-color: #333;
+}
+.app-shell .service-panel {
+  padding: 26px 27px 0;
+  margin-top: 24px;
+}
+.app-shell .service strong {
+  font-size: 12px;
+  color: #d1d1d1;
+}
+.app-shell .service small {
+  font-size: 10px;
+  color: #898989;
+}
+.app-shell .service>span:last-child {
+  font-size: 11px;
+}
+.app-shell .service {
+  border-color: #333;
+}
+.app-shell .service-icon {
+  width: 32px;
+  height: 32px;
+  background: #30271c;
+  color: #d7ba84;
+}
+.app-shell .service-icon.is-online {
+  background: #233026;
+  color: #a3bb9a;
+}
+.app-shell .service-footer {
+  background: #131313;
+  border-color: #303030;
+  padding: 16px 26px;
+  margin: 0 -27px;
+}
+.app-shell .service-footer>span {
+  font-size: 10px;
+  color: #8e8e8e;
+}
+.app-shell .service-help {
+  font-size: 12px;
+  background: #272116;
+  border-color: #4d412b;
+}
+.app-shell .status-label {
+  background: #29251f;
+  color: #c7b38d;
+  border-color: #484033;
+  border-radius: 20px;
+  font-size: 10px;
+  padding: 6px 10px;
+}
+.app-shell .status-online,.app-shell .status-completed {
+  background: #1e2c22;
+  border-color: #384c3b;
+  color: #a8c4a6;
+}
+.app-shell .status-failed {
+  background: #352121;
+  border-color: #5c3a3a;
+  color: #e4aaaa;
+}
+.app-shell .status-running {
+  background: #1d293b;
+  border-color: #344a69;
+  color: #adc5ee;
+}
+.app-shell .status-retrying,.app-shell .status-cancelling {
+  background: #302a20;
+  border-color: #50442f;
+  color: #d5c097;
+}
+.app-shell .status-cancelled {
+  background: #2c2c2c;
+  border-color: #444;
+  color: #c0c0c0;
+}
+.app-shell .queue-counts {
+  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  border: 1px solid #2d2d2d;
+  background: #171717;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+.app-shell .queue-counts>span {
+  border: 0;
+  border-right: 1px solid #303030;
+  border-radius: 0;
+  background: transparent;
+  padding: 20px;
+  font-size: 12px;
+  color: #999;
+}
+.app-shell .queue-counts>span:last-child {
+  border: 0;
+}
+.app-shell .queue-counts strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-top: 10px;
+  color: #ddd;
+  font-weight: 500;
+}
+.app-shell .queue-job {
+  padding: 24px;
+  gap: 18px;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+}
+.app-shell .queue-job h2 {
+  font-size: 16px;
+}
+.app-shell .queue-job p {
+  font-size: 12px;
+  color: #969696;
+  line-height: 1.7;
+}
+.app-shell .queue-job a {
+  margin-top: 15px;
+  display: inline-flex;
+}
+.app-shell .queue-job button {
+  margin: 12px 8px 0 0;
+}
+.app-shell .queue-job-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-shell .queue-job progress {
+  height: 6px;
+  border-radius: 6px;
+  accent-color: #adbda1;
+}
+.app-shell .queue-empty {
+  background: #141414;
+  border-color: #2b2b2b;
+  border-radius: 21px;
+  padding: 60px 30px;
+}
+.app-shell .queue-empty-icon {
+  background: #292929;
+  border-color: #414141;
+  color: #bfbfbf;
+  border-radius: 20px;
+  width: 65px;
+  height: 65px;
+}
+.app-shell .queue-empty h2 {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -.6px;
+}
+.app-shell .queue-empty p {
+  font-size: 13px;
+  color: #979797;
+}
+.app-shell .queue-help {
+  background: #151515;
+  border-color: #2b2b2b;
+  border-radius: 16px;
+  padding: 22px;
+  color: #a7b59b;
+  gap: 15px;
+}
+.app-shell .queue-help h3 {
+  font-size: 13px;
+  color: #ccc;
+}
+.app-shell .queue-help p {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+@media(max-width:1150px) {
+  .app-shell .stat-card {
+    padding: 18px;
+  }
+  .app-shell .stat-card>small {
+    font-size: 9px;
+  }
+  .workflow-card {
+    padding: 20px;
+  }
+  .app-shell .create-layout {
+    grid-template-columns: minmax(0,1fr) 270px;
+    gap: 18px;
+  }
+  .app-shell .form-panel,.app-shell .settings-card {
+    padding: 24px;
+  }
+  .app-shell .source-choice {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+  .app-shell .source-choice-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .app-shell .source-choice small {
+    font-size: 9px;
+  }
+  .app-shell .project-preview-card {
+    padding: 20px;
+  }
+}
+@media(max-width:960px) {
+  .app-shell .create-layout {
+    grid-template-columns: 1fr;
+  }
+  .app-shell .create-aside {
+    display: block;
+  }
+  .app-shell .project-preview-card {
+    display: none;
+  }
+  .app-shell .create-local-note {
+    margin: 0;
+  }
+  .app-shell .dashboard-stats {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .app-shell .stat-card:nth-child(-n+2) {
+    border-bottom: 1px solid #2b2b2b;
+  }
+  .app-shell .stat-card:nth-child(2) {
+    border-right: 0;
+  }
+  .workflow-cards {
+    grid-template-columns: 1fr;
+  }
+  .workflow-card {
+    padding: 22px;
+  }
+  .workflow-card>div {
+    margin-bottom: 16px;
+  }
+  .workflow-card p {
+    min-height: 0;
+  }
+  .workflow-card>strong {
+    margin-top: 17px;
+  }
+  .workflow-label {
+    display: none;
+  }
+}
+@media(max-width:760px) {
+  .app-shell h1 {
+    font-size: 28px;
+    letter-spacing: -.9px;
+  }
+  .app-shell .page-heading {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .app-shell .page-heading .muted {
+    font-size: 12px;
+  }
+  .app-shell .page-kicker {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .app-shell .dashboard-page .page-heading {
+    display: block;
+  }
+  .app-shell .dashboard-page .page-heading>a {
+    margin-top: 19px;
+    font-size: 12px;
+    height: 38px;
+  }
+  .app-shell .dashboard-stats {
+    margin: 18px 0 30px;
+    border-radius: 17px;
+  }
+  .app-shell .stat-card {
+    padding: 17px;
+  }
+  .app-shell .stat-card>div {
+    font-size: 10px;
+  }
+  .app-shell .stat-card>strong {
+    font-size: 28px;
+  }
+  .app-shell .stat-card>strong.stat-text {
+    font-size: 20px;
+  }
+  .app-shell .stat-card>small {
+    font-size: 9px;
+  }
+  .app-shell .section-heading h2 {
+    font-size: 18px;
+  }
+  .app-shell .section-heading p {
+    font-size: 11px;
+  }
+  .app-shell .project-toolbar {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .app-shell .project-search {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+  }
+  .app-shell .project-search input {
+    font-size: 11px;
+    height: 40px;
+  }
+  .app-shell .project-sort {
+    padding: 0 9px;
+    gap: 6px;
+  }
+  .app-shell .project-sort select {
+    font-size: 10px;
+    max-width: 105px;
+    height: 38px;
+  }
+  .app-shell .project-sort svg {
+    width: 13px;
+  }
+  .app-shell .project-card {
+    border-radius: 17px;
+  }
+  .app-shell .project-thumbnail {
+    height: 185px;
+  }
+  .app-shell .project-card-description {
+    padding: 17px 18px 10px;
+  }
+  .app-shell .project-list .project-card-open {
+    grid-template-columns: 105px 1fr;
+  }
+  .app-shell .project-list .project-thumbnail {
+    height: 115px;
+  }
+  .app-shell .project-list .project-card-description {
+    padding: 14px 12px;
+  }
+  .app-shell .project-list .project-card-description p {
+    font-size: 9px;
+  }
+  .app-shell .project-list .project-open-icon {
+    display: none;
+  }
+  .app-shell .empty-projects {
+    min-height: 300px;
+    padding: 30px 24px;
+  }
+  .app-shell .empty-projects h3 {
+    font-size: 17px;
+  }
+  .app-shell .empty-projects p {
+    font-size: 12px;
+  }
+  .dashboard-workflow {
+    margin-top: 32px;
+  }
+  .workflow-cards {
+    gap: 13px;
+  }
+  .workflow-card {
+    border-radius: 17px;
+  }
+  .app-shell .form-panel,.app-shell .settings-card {
+    padding: 22px;
+  }
+  .app-shell .field-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .app-shell .form-section-heading h2,.app-shell .settings-section-heading h2 {
+    font-size: 16px;
+  }
+  .app-shell .form-section-heading p,.app-shell .settings-section-heading p {
+    font-size: 11px;
+  }
+  .app-shell .source-choice {
+    min-height: 90px;
+    gap: 8px;
+    padding: 12px 10px;
+  }
+  .app-shell .source-choice-icon {
+    display: none;
+  }
+  .app-shell .source-choice strong {
+    font-size: 11px;
+  }
+  .app-shell .source-choice small {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .app-shell .form-notice {
+    padding: 15px;
+  }
+  .app-shell .form-notice strong {
+    font-size: 12px;
+  }
+  .app-shell .form-notice p {
+    font-size: 11px;
+  }
+  .app-shell .form-actions a,.app-shell .form-actions button {
+    font-size: 11px;
+  }
+  .app-shell .settings-card-footer {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .app-shell .local-label {
+    font-size: 8px;
+    padding: 7px 9px;
+  }
+  .app-shell .preference-row {
+    gap: 20px;
+  }
+  .app-shell .service-panel {
+    padding: 23px 22px 0;
+  }
+  .app-shell .service-footer {
+    margin: 0 -22px;
+    padding: 15px 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .app-shell .service-footer>span {
+    font-size: 10px;
+  }
+  .app-shell .service-help {
+    margin: 0 -22px;
+    padding: 16px 22px;
+  }
+  .app-shell .queue-counts {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    border-radius: 17px;
+  }
+  .app-shell .queue-counts>span {
+    padding: 17px;
+  }
+  .app-shell .queue-counts>span:nth-child(-n+4) {
+    border-bottom: 1px solid #303030;
+  }
+  .app-shell .queue-counts>span:nth-child(2n) {
+    border-right: 0;
+  }
+  .app-shell .queue-counts>span:last-child {
+    border: 0;
+  }
+  .app-shell .queue-empty {
+    padding: 42px 25px;
+  }
+  .app-shell .queue-empty h2 {
+    font-size: 21px;
+  }
+  .app-shell .queue-empty>div:last-child {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .app-shell .queue-job {
+    padding: 20px;
+    gap: 14px;
+  }
+  .app-shell .queue-job h2 {
+    font-size: 14px;
+  }
+  .app-shell .queue-job p {
+    font-size: 11px;
+  }
+  .app-shell .queue-help {
+    padding: 20px;
+  }
+  .app-shell .queue-help p {
+    font-size: 11px;
+  }
+}
+/* Layout primitives shared by overview and all form pages. */
+.app-shell .page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-shell .dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+}
+.app-shell .stat-card {
+  display: block;
+}
+.app-shell .stat-card>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-shell .stat-card>strong {
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+.app-shell .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.app-shell .section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.app-shell .project-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-shell .view-switch {
+  display: flex;
+  gap: 2px;
+  border: 1px solid #333;
+}
+.app-shell .project-search {
+  position: relative;
+}
+.app-shell .project-search>svg {
+  position: absolute;
+  z-index: 1;
+}
+.app-shell .project-search input {
+  width: 100%;
+}
+.app-shell .project-sort {
+  display: flex;
+  align-items: center;
+  border: 1px solid #303030;
+}
+.app-shell .project-sort select {
+  border: 0;
+  background: transparent;
+  outline-offset: 5px;
+}
+.app-shell .project-collection {
+  display: grid;
+}
+.app-shell .project-grid {
+  grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.app-shell .project-list {
+  grid-template-columns: 1fr;
+}
+.app-shell .project-card {
+  display: block;
+  overflow: hidden;
+  transition: transform .2s,border-color .2s;
+}
+.app-shell .project-card-open {
+  display: block;
+}
+.app-shell .project-list .project-card-open {
+  display: grid;
+  grid-template-columns: 170px minmax(0,1fr);
+}
+.app-shell .project-list .project-thumbnail {
+  height: 125px;
+}
+.app-shell .project-thumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.app-shell .project-thumbnail>strong {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  line-height: 1.2;
+}
+.app-shell .project-draft-badge {
+  position: absolute;
+  left: 13px;
+  top: 13px;
+  background: #0005;
+  border: 1px solid #ffffff20;
+  color: #c7c7c7;
+}
+.app-shell .project-thumbnail-art {
+  position: absolute;
+  opacity: .2;
+  border-style: solid;
+  transform: rotate(-32deg);
+}
+.app-shell .project-thumbnail-line {
+  position: absolute;
+  bottom: 23px;
+  left: 20px;
+  width: 27px;
+  height: 2px;
+}
+.app-shell .project-thumbnail-size {
+  position: absolute;
+  bottom: 13px;
+  right: 13px;
+}
+.app-shell .project-card-description {
+  border-top: 1px solid #292929;
+}
+.app-shell .project-card-description>div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.app-shell .project-card-description h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.app-shell .project-card-description p>span {
+  margin: 0 4px;
+}
+.app-shell .delete-project-row {
+  display: flex;
+  justify-content: flex-end;
+}
+.app-shell .empty-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.app-shell .project-loading {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 35px;
+  position: relative;
+}
+.app-shell .project-loading>.skeleton {
+  height: 200px;
+  flex: 1;
+}
+.app-shell .project-loading>span {
+  position: absolute;
+  bottom: 0;
+}
+.skeleton {
+  border-radius: 13px;
+  background: #202020;
+}
+.app-shell .settings-grid,.app-shell .create-layout {
+  display: grid;
+}
+.app-shell .settings-grid {
+  grid-template-columns: 1.6fr 1fr;
+}
+.app-shell .field-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.app-shell .form-section-heading,.app-shell .settings-section-heading {
+  display: flex;
+  align-items: flex-start;
+}
+.app-shell .form-section-number,.app-shell .settings-section-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.app-shell .source-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.app-shell .source-choice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-width: 1px;
+}
+.app-shell .source-choice>span:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+}
+.app-shell .source-choice strong,.app-shell .source-choice small {
+  display: block;
+}
+.app-shell .source-choice small {
+  white-space: normal;
+  line-height: 1.7;
+}
+.app-shell .source-choice-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.app-shell .source-choice-radio {
+  border: 1px solid #777;
+  border-radius: 50%;
+  height: 13px;
+  width: 13px;
+}
+.app-shell .is-selected .source-choice-radio {
+  border-width: 4px;
+}
+.app-shell .url-input-wrap {
+  position: relative;
+}
+.app-shell .url-input-wrap>span {
+  position: absolute;
+  left: 13px;
+  z-index: 1;
+}
+.app-shell .url-input-wrap input {
+  padding-left: 36px;
+}
+.app-shell .source-upload {
+  text-align: center;
+  border: 1px dashed #444;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+}
+.app-shell .source-upload input {
+  width: 100%;
+  overflow: hidden;
+}
+.app-shell .code-input {
+  width: 100%;
+  font-family: monospace;
+  resize: vertical;
+}
+.app-shell .form-notice {
+  display: flex;
+  align-items: flex-start;
+}
+.app-shell .form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+  margin-top: 24px;
+}
+.app-shell .settings-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #333;
+}
+.app-shell .project-preview-card {
+  overflow: hidden;
+}
+.app-shell .create-preview-art {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+}
+.app-shell .create-preview-art>span {
+  position: relative;
+  z-index: 1;
+  line-height: 1.05;
+}
+.app-shell .create-preview-art>div {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -25px;
+  top: 20px;
+  border-style: solid;
+}
+.app-shell .create-preview-art>i {
+  position: absolute;
+  right: 25px;
+  bottom: 18px;
+  font-size: 40px;
+}
+.app-shell .project-benefits {
+  display: grid;
+  list-style: none;
+  gap: 12px;
+  padding: 0;
+  margin: 23px 0;
+}
+.app-shell .project-benefits li {
+  display: flex;
+  gap: 10px;
+}
+.app-shell .project-defaults {
+  border-top: 1px solid #333;
+  padding-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+.app-shell .create-local-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 16px 7px;
+}
+.app-shell .preference-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  margin-top: 10px;
+  border-top: 1px solid #333;
+}
+.app-shell .preference-row p {
+  margin-top: 5px;
+}
+.app-shell .storage-stat {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 27px 0 20px;
+}
+.app-shell .storage-state {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-top: 1px solid #333;
+  margin-top: 21px;
+  padding-top: 18px;
+}
+.app-shell .storage-state strong {
+  font-weight: 400;
+}
+.app-shell .service-rows {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  padding: 15px 0 25px;
+}
+.app-shell .service {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 18px;
+  border-right: 1px solid #333;
+  min-width: 0;
+}
+.app-shell .service:first-child {
+  padding-left: 0;
+}
+.app-shell .service:last-child {
+  border: 0;
+  padding-right: 0;
+}
+.app-shell .service-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.app-shell .service strong,.app-shell .service small {
+  display: block;
+}
+.app-shell .service>span:last-child {
+  margin-left: auto;
+}
+.app-shell .service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-top: 1px solid #333;
+}
+.app-shell .service-help {
+  margin: 0 -27px;
+  padding: 15px 27px;
+}
+.app-shell .status-label {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #444;
+}
+.app-shell .queue-list {
+  display: grid;
+  gap: 16px;
+}
+.app-shell .queue-job {
+  display: grid;
+}
+.app-shell .queue-job progress {
+  grid-column: 1/-1;
+  width: 100%;
+}
+.app-shell .queue-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-width: 1px;
+  min-height: 360px;
+}
+.app-shell .queue-empty-icon {
+  display: grid;
+  place-items: center;
+  margin-bottom: 23px;
+}
+.app-shell .queue-empty p {
+  max-width: 450px;
+  line-height: 1.85;
+  margin: 14px 0 24px;
+}
+.app-shell .queue-empty>div:last-child {
+  display: flex;
+  gap: 10px;
+}
+.app-shell .queue-help {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 22px;
+  border-width: 1px;
+}
+.app-shell .queue-help p {
+  margin-top: 5px;
+  line-height: 1.8;
+}
+.route-loading {
+  display: grid;
+  gap: 18px;
+}
+.route-loading .skeleton {
+  height: 120px;
+}
+.route-loading .skeleton:last-child {
+  height: 260px;
+}
+@media(max-width:1150px) {
+  .app-shell .project-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .app-shell .service-rows {
+    grid-template-columns: 1fr;
+  }
+  .app-shell .service {
+    padding: 15px 0;
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+}
+@media(max-width:960px) {
+  .app-shell .dashboard-stats {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .app-shell .create-layout,.app-shell .settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media(max-width:760px) {
+  .app-shell .page-heading {
+    align-items: flex-start;
+  }
+  .app-shell .dashboard-page .page-heading {
+    display: block;
+  }
+  .app-shell .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-shell .project-list .project-card-open {
+    grid-template-columns: 100px minmax(0,1fr);
+  }
+  .app-shell .field-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-shell .source-choice {
+    min-width: 0;
+  }
+  .app-shell .source-choice-icon {
+    display: none;
+  }
+  .app-shell .settings-card-footer {
+    flex-wrap: wrap;
+  }
+  .app-shell .queue-empty>div:last-child {
+    flex-wrap: wrap;
+  }
+  .app-shell .app-content {
+    min-height: calc(100dvh - 155px);
+  }
+}
+.spinning {
+  animation: studio-spin 1s linear infinite;
+}
+.account-page { display:grid; place-items:start center; padding-top:clamp(28px,8vh,96px)!important; }
+.account-card { width:min(100%,520px); padding:clamp(24px,5vw,42px); border:1px solid #2b2b2b; border-radius:22px; background:linear-gradient(145deg,#181818,#111); }
+.account-card h1,.account-required h1 { margin:8px 0 10px; font-size:clamp(28px,4vw,40px); letter-spacing:-1.4px; }
+.account-card>.muted,.account-required>.muted { line-height:1.75; }
+.account-icon,.account-required .guide-icon { display:grid; width:44px; height:44px; place-items:center; margin-bottom:24px; border:1px solid #343434; border-radius:14px; background:#202020; color:#dcdcdc; }
+.account-form { display:grid; gap:19px; margin-top:28px; }
+.account-mode { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:8px; margin-top:24px; color:#929292; font-size:12px; }
+.account-mode button { padding:4px; border:0; background:transparent; color:#f1f1f1; font-weight:600; cursor:pointer; }
+.account-privacy { display:flex; gap:10px; margin-top:26px; padding:13px; border:1px solid #292929; border-radius:12px; color:#929292; font-size:11px; line-height:1.6; }
+.account-privacy svg { flex-shrink:0; color:#b8c8b9; }
+.account-card .form-actions { margin-top:20px; }
+.account-required { max-width:680px; margin:10vh auto; padding:clamp(24px,5vw,48px); border-radius:22px; }
+.account-required>div:last-of-type { margin:24px 0 16px; }
+.account-required small { color:#858585; }
+.account-email { max-width:190px; overflow:hidden; text-overflow:ellipsis; color:#999; font-size:11px; }
+@keyframes studio-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .spinning {
+    animation: none;
+  }
+}

@@ -1,0 +1,18 @@
+packages:
+  - apps/web
+  - packages/*
+
+engineStrict: true
+verifyDepsBeforeRun: error
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - lucide-react@1.62.0
+
+# Remotion pins webpack 5.105; schema-utils 4.8 requires a newer webpack peer.
+overrides:
+  schema-utils: 4.3.3

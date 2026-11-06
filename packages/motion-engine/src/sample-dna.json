@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "analysis_id": "12345678-1234-4234-8234-123456789012",
+  "source_url": "https://atlas.example/",
+  "final_url": "https://atlas.example/",
+  "captured_at": "2026-01-01T00:00:00Z",
+  "palette": [
+    {
+      "value": "#0b1420",
+      "role": "background",
+      "count": 24,
+      "frequency": 1,
+      "confidence": 0.9
+    },
+    {
+      "value": "#edf3fa",
+      "role": "text",
+      "count": 16,
+      "frequency": 1,
+      "confidence": 0.9
+    },
+    {
+      "value": "#59c3b0",
+      "role": "primary",
+      "count": 5,
+      "frequency": 1,
+      "confidence": 0.9
+    },
+    {
+      "value": "#59c3b0",
+      "role": "accent",
+      "count": 8,
+      "frequency": 1,
+      "confidence": 0.9
+    }
+  ],
+  "typography": {
+    "fonts": [
+      {
+        "family": "Inter, sans-serif",
+        "size": "48px",
+        "weight": "700",
+        "count": 16,
+        "available": true
+      }
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "count": 1,
+        "sizes": [
+          "64px"
+        ]
+      }
+    ],
+    "confidence": 0.9
+  },
+  "layout": {
+    "features": [
+      {
+        "kind": "hero",
+        "count": 1,
+        "confidence": 0.7
+      },
+      {
+        "kind": "grid",
+        "count": 1,
+        "confidence": 0.9
+      }
+    ],
+    "visual_density": 0.35,
+    "sampled_elements": 64,
+    "confidence": 0.7
+  },
+  "motion": [
+    {
+      "transition": "transform, opacity",
+      "transition_duration": "0.7s",
+      "animation": "none",
+      "animation_duration": "0s",
+      "timing": "ease-out",
+      "transform": "matrix(1, 0, 0, 1, 0, 12)",
+      "count": 5
+    }
+  ],
+  "motion_scope": "computed-css-only",
+  "assets": [],
+  "screenshots": [],
+  "confidence": 0.85,
+  "warnings": [
+    "Authored sample DNA fixture, not a live website extraction."
+  ]
+}

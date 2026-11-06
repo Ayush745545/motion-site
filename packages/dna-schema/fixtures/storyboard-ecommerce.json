@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "brief": {
+    "content_summary": "",
+    "product_category": "auto",
+    "target_audience": "Website visitors",
+    "duration_seconds": 15,
+    "motion_style": "cinematic",
+    "aspect_ratio": "landscape",
+    "variant": 0
+  },
+  "analysis_id": "12345678-1234-4234-8234-123456789012",
+  "category": "ecommerce",
+  "category_confidence": 0.75,
+  "creative_concept": "Lead with the collection, then source-backed product details. For Website visitors.",
+  "opening_hook": "Handmade ceramic cups.",
+  "scenes": [
+    {
+      "kind": "intro",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 67,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "intro",
+      "description": "Introduce the brand with the source headline and animated identity.",
+      "headline": "Handmade ceramic cups.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Handmade ceramic cups."
+      ]
+    },
+    {
+      "kind": "reveal",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 112,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "reveal",
+      "description": "Reveal the captured website with a controlled camera move.",
+      "headline": "Handmade ceramic cups.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Handmade ceramic cups."
+      ]
+    },
+    {
+      "kind": "features",
+      "fact_ids": [
+        "fact-0",
+        "fact-1",
+        "fact-2"
+      ],
+      "duration_frames": 180,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "features",
+      "description": "Present source-backed highlights as staggered cards.",
+      "headline": "Handmade ceramic cups.",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Handmade ceramic cups.",
+        "Shop our stoneware collection.",
+        "Every cup is glazed by hand."
+      ]
+    },
+    {
+      "kind": "cta",
+      "fact_ids": [
+        "fact-0"
+      ],
+      "duration_frames": 91,
+      "motion_preset": "parallax",
+      "transition": "fade",
+      "id": "cta",
+      "description": "Close with the website address and source call to action.",
+      "headline": "Shop the collection",
+      "visual_asset_refs": [],
+      "supporting_copy": [
+        "Handmade ceramic cups."
+      ]
+    }
+  ],
+  "cta": "Shop the collection",
+  "evidence": [
+    {
+      "id": "fact-0",
+      "text": "Handmade ceramic cups.",
+      "source": "website"
+    },
+    {
+      "id": "fact-1",
+      "text": "Shop our stoneware collection.",
+      "source": "website"
+    },
+    {
+      "id": "fact-2",
+      "text": "Every cup is glazed by hand.",
+      "source": "website"
+    },
+    {
+      "id": "fact-3",
+      "text": "Shipping is available within the UK.",
+      "source": "website"
+    },
+    {
+      "id": "fact-4",
+      "text": "Shop the collection",
+      "source": "website"
+    }
+  ],
+  "generation": {
+    "provider": "deterministic",
+    "model": "rules-v1",
+    "requested_provider": "deterministic",
+    "requested_model": "rules-v1",
+    "fallback_used": true,
+    "fallback_reason": "No LLM configured; deterministic direction selected.",
+    "confidence": 0.75,
+    "warnings": [
+      "Source quotations are used verbatim; editorial descriptions describe visuals only.",
+      "User-provided summaries are treated as supplied evidence, not independently verified.",
+      "No captured screenshot reference is available; capture the site before rendering."
+    ]
+  },
+  "fps": 30,
+  "total_frames": 450,
+  "edited": false
+}

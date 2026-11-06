@@ -1,0 +1,36 @@
+{
+  "name": "@motion-dna/motion-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./src/schema.ts",
+    "./sample": "./src/sample.ts",
+    "./jobs": "./src/jobs.ts",
+    "./project": "./src/project.ts",
+    "./render-input": "./src/render-input.ts",
+    "./render-request": "./src/render-request.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/bundle.mjs",
+    "render": "node --import tsx scripts/render.ts",
+    "test": "node --import tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@motion-dna/dna-schema": "workspace:*",
+    "remotion": "4.0.539",
+    "@remotion/bundler": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "zod": "4.6.7",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.7",
+    "@types/node": "22.19.7",
+    "typescript": "5.9.3",
+    "tsx": "4.23.15"
+  }
+}
